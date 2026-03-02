@@ -165,7 +165,7 @@ export default function JapanMap({
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setClearColor(0x000000, 0);
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.domElement.style.display = 'block'; // inlineマージンによる高さずれを防止
+    renderer.domElement.style.display = "block"; // inlineマージンによる高さずれを防止
     container.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
@@ -305,8 +305,9 @@ export default function JapanMap({
       const canvas = rendererRef.current?.domElement;
       if (!canvas) return;
       const canvasRect = canvas.getBoundingClientRect();
-      const ndcX = ((e.clientX - canvasRect.left) / canvas.clientWidth)  * 2 - 1;
-      const ndcY = -((e.clientY - canvasRect.top)  / canvas.clientHeight) * 2 + 1;
+      const ndcX = ((e.clientX - canvasRect.left) / canvas.clientWidth) * 2 - 1;
+      const ndcY =
+        -((e.clientY - canvasRect.top) / canvas.clientHeight) * 2 + 1;
       const raycaster = new THREE.Raycaster();
       raycaster.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
       const hits = raycaster.intersectObjects(
@@ -359,8 +360,9 @@ export default function JapanMap({
       const canvas = rendererRef.current?.domElement;
       if (!canvas) return;
       const canvasRect = canvas.getBoundingClientRect();
-      const ndcX = ((e.clientX - canvasRect.left) / canvas.clientWidth)  * 2 - 1;
-      const ndcY = -((e.clientY - canvasRect.top)  / canvas.clientHeight) * 2 + 1;
+      const ndcX = ((e.clientX - canvasRect.left) / canvas.clientWidth) * 2 - 1;
+      const ndcY =
+        -((e.clientY - canvasRect.top) / canvas.clientHeight) * 2 + 1;
       const raycaster = new THREE.Raycaster();
       raycaster.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
       const hits = raycaster.intersectObjects(

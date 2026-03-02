@@ -347,7 +347,7 @@ export default function InfoPanel({ selectedId }: Props) {
           <InsuranceRow
             label="健康保険料率"
             totalRate={pref.healthRate}
-            note="協会けんぽ 2024年度"
+            note="協会けんぽ 2026年度（令和8年度）"
             color="blue.600"
           />
 

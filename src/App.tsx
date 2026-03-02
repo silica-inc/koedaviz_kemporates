@@ -58,7 +58,8 @@ export default function App() {
               </Heading>
             </Flex>
             <Text color="gray.600" fontSize="sm">
-              協会けんぽ 2024年度 | 地図をクリックして各都道府県の保険料率を確認
+              協会けんぽ 2026年度（令和8年度） |
+              地図をクリックして各都道府県の保険料率を確認
             </Text>
           </Box>
           <Flex gap={3} align="center">
@@ -104,7 +105,11 @@ export default function App() {
           border="1px solid"
           borderColor="gray.200"
           overflow="hidden"
-          style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.07)", display: "flex", flexDirection: "column" }}
+          style={{
+            boxShadow: "0 1px 4px rgba(0,0,0,0.07)",
+            display: "flex",
+            flexDirection: "column",
+          }}
           maxH={{ base: "auto", lg: "calc(100vh - 140px)" }}
           p={2}
         >
@@ -137,8 +142,9 @@ export default function App() {
       {/* Footer */}
       <Box mt={4} textAlign="center">
         <Text fontSize="xs" color="gray.500">
-          出典: 全国健康保険協会（協会けんぽ）2024年度 都道府県単位保険料率 ／
-          厚生年金・雇用保険料率は2024年度現行値
+          出典:
+          全国健康保険協会（協会けんぽ）2026年度（令和8年度）都道府県単位保険料率
+          ／ 厚生年金・雇用保険料率は2024年度現行値
         </Text>
       </Box>
     </Box>
