@@ -192,7 +192,7 @@ export default function JapanMap({
     };
     animate();
 
-    fetch("/japan.topojson")
+    fetch(`${import.meta.env.BASE_URL}japan.topojson`)
       .then((r) => r.json())
       .then((topo: Topology) => {
         const japanFeature = feature(topo, (topo as any).objects.japan) as any;
