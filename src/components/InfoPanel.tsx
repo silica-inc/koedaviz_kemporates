@@ -95,7 +95,7 @@ function InsuranceRow({
       borderColor="gray.200"
     >
       <Flex justify="space-between" align="center" mb={1}>
-        <Text fontSize="xs" color="gray.600" fontWeight="600">
+        <Text fontSize="xs" color="gray.700" fontWeight="600">
           {label}
           {isNational && (
             <Badge ml={2} size="sm" colorPalette="blue" variant="subtle">
@@ -116,20 +116,20 @@ function InsuranceRow({
         <Text fontSize="sm" color="gray.500">
           %
         </Text>
-        <Text fontSize="xs" color="gray.500" ml={2}>
+        <Text fontSize="xs" color="gray.400" ml={2}>
           (合計)
         </Text>
       </Flex>
       <Flex gap={4} mt={1}>
         <Text fontSize="xs" color="gray.500">
           従業員:{" "}
-          <Text as="span" color="gray.700" fontWeight="600">
+          <Text as="span" color="gray.800" fontWeight="600">
             {employeeRate.toFixed(2)}%
           </Text>
         </Text>
         <Text fontSize="xs" color="gray.500">
           事業主:{" "}
-          <Text as="span" color="gray.700" fontWeight="600">
+          <Text as="span" color="gray.800" fontWeight="600">
             {employerRate.toFixed(2)}%
           </Text>
         </Text>
@@ -161,8 +161,8 @@ export default function InfoPanel({ selectedId }: Props) {
   const getRankColor = (r: number) => {
     if (r <= 5) return "red.600";
     if (r <= 15) return "orange.600";
-    if (r >= 43) return "green.600";
-    if (r >= 33) return "teal.600";
+    if (r >= 43) return "teal.600";
+    if (r >= 33) return "teal.700";
     return "blue.600";
   };
 
@@ -237,7 +237,7 @@ export default function InfoPanel({ selectedId }: Props) {
                   <Flex align="center" gap={2}>
                     <Text
                       fontSize="xs"
-                      color="green.600"
+                      color="teal.600"
                       fontWeight="700"
                       w="20px"
                     >
@@ -249,7 +249,7 @@ export default function InfoPanel({ selectedId }: Props) {
                   </Flex>
                   <Text
                     fontSize="sm"
-                    color="green.700"
+                    color="teal.700"
                     fontWeight="600"
                     fontFamily="mono"
                   >
@@ -313,7 +313,7 @@ export default function InfoPanel({ selectedId }: Props) {
                 value={pref.healthRate}
                 min={minRate}
                 max={maxRate}
-                color="linear-gradient(to right, #38bdf8, #f59e0b, #ef4444)"
+                color="linear-gradient(to right, #1565C0, #F9A825, #C62828)"
               />
               <Flex justify="space-between" mt={1}>
                 <Text fontSize="xs" color="gray.500">
@@ -321,9 +321,7 @@ export default function InfoPanel({ selectedId }: Props) {
                 </Text>
                 <Text
                   fontSize="xs"
-                  color={
-                    pref.healthRate > nationalAvg ? "red.400" : "green.400"
-                  }
+                  color={pref.healthRate > nationalAvg ? "red.600" : "teal.600"}
                   fontWeight="600"
                 >
                   {pref.healthRate > nationalAvg ? "▲" : "▼"}{" "}
@@ -348,14 +346,14 @@ export default function InfoPanel({ selectedId }: Props) {
             label="健康保険料率"
             totalRate={pref.healthRate}
             note="協会けんぽ 2026年度（令和8年度）"
-            color="blue.600"
+            color="blue.700"
           />
 
           <InsuranceRow
             label="介護保険料率"
             totalRate={NURSING_RATE}
             note="40〜64歳が対象"
-            color="purple.600"
+            color="teal.700"
             isNational
           />
 
@@ -367,7 +365,7 @@ export default function InfoPanel({ selectedId }: Props) {
             borderColor="blue.200"
           >
             <Text fontSize="xs" color="blue.700" fontWeight="700" mb={1}>
-              健康 + 介護（40〜64歳の場合）
+              健康 + 介護（40～64歳の場合）
             </Text>
             <Flex align="baseline" gap={1}>
               <Text
@@ -438,7 +436,7 @@ export default function InfoPanel({ selectedId }: Props) {
               <Text
                 fontSize="lg"
                 fontWeight="700"
-                color="green.600"
+                color="teal.700"
                 fontFamily="mono"
               >
                 {EMPLOYMENT_RATE}%
@@ -457,7 +455,7 @@ export default function InfoPanel({ selectedId }: Props) {
             borderColor="orange.200"
           >
             <Text fontSize="xs" color="orange.700" fontWeight="700" mb={1}>
-              社会保険料合計（40〜64歳・従業員負担）
+              社会保険料合計（40～64歳・従業員負担）
             </Text>
             <Flex align="baseline" gap={1}>
               <Text
