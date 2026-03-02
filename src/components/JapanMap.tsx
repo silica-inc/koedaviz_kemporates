@@ -251,8 +251,10 @@ export default function JapanMap({
           const baseColor = getRateColor(pref.healthRate);
           const allDotMeshes: THREE.InstancedMesh[] = [];
           const allHitMeshes: THREE.Mesh[] = [];
-          let overallMinX = Infinity, overallMaxX = -Infinity;
-          let overallMinY = Infinity, overallMaxY = -Infinity;
+          let overallMinX = Infinity,
+            overallMaxX = -Infinity;
+          let overallMinY = Infinity,
+            overallMaxY = -Infinity;
 
           shapes.forEach((shape) => {
             // 不可視ヒットメッシュ（レイキャスト専用）
